@@ -13,7 +13,12 @@
     <!--Vue 3-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
-        
+        <h1>My Task</h1>
+        <ul>
+            <li v-for="todoItem in todoList">
+                {{ todoItem.text }}
+            </li>
+        </ul>
     </div>
     <!--Script-->
     <script src="js/script.js"></script>
