@@ -12,4 +12,6 @@
     margin: 0 auto;
 }
 
-/* # generals*/
+.done {
+    text-decoration: line-through;
+}
