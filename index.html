@@ -24,6 +24,13 @@
                 <i class="fa-solid fa-xmark fs-4" @click="removeItem(index)"></i>
             </li>
         </ul>
+        <div id="input-group">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="addTask" v-model="newTodo.text">
+                <label for="floatingInput">New Task:</label>
+              </div>
+              <button type="button" class="btn btn-lg btn-primary" @click="addTask()">Add New Task</button>
+        </div>
     </div>
     <!--Script-->
     <script src="js/script.js"></script>
