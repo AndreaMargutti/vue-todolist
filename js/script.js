@@ -1,1 +1,10 @@
-console.log('JS OK');
+createApp({
+    data() {
+        return {
+            message: 'Hello Vue!'
+        }
+    },
+    methods: {
+
+    }
+}).mount('#app')
