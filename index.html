@@ -17,11 +17,11 @@
     <div id="app">
         <h1>My Task</h1>
         <ul>
-            <li v-for="todoItem in todoList">
-                <span class="fs-3" :class="{done: todoItem.done}">
+            <li v-for="(todoItem, index) in todoList">
+                <span class="fs-3 me-2" :class="{done: todoItem.done}">
                     {{ todoItem.text }}
                 </span>
-                <i class="fa-solid fa-xmark fs-4"></i>
+                <i class="fa-solid fa-xmark fs-4" @click="removeItem(index)"></i>
             </li>
         </ul>
     </div>
