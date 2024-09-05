@@ -15,3 +15,7 @@
 .done {
     text-decoration: line-through;
 }
+
+li > i:hover {
+    color: red;
+}
