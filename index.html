@@ -18,7 +18,10 @@
         <h1>My Task</h1>
         <ul>
             <li v-for="(todoItem, index) in todoList">
-                <span class="fs-3 me-2" :class="{done: todoItem.done}">
+                <!--Lo scope funziona esattamente come in JS Vanilla
+                    Qui la variabile "todoItem" viene riconosciuta solo perchè lo <span> è 
+                        all'interno del v-for-->
+                <span class="fs-3 me-2" :class="{done: todoItem.done}" @click="changeDone(index)">
                     {{ todoItem.text }}
                 </span>
                 <i class="fa-solid fa-xmark fs-4" @click="removeItem(index)"></i>
@@ -26,10 +29,11 @@
         </ul>
         <div id="input-group">
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="addTask" v-model="newTodo.text">
+                <input type="email" class="form-control" id="floatingInput" placeholder="addTask" v-model="newTodoContent"
+                @keyup.enter="addItem(newTodoContent)">
                 <label for="floatingInput">New Task:</label>
               </div>
-              <button type="button" class="btn btn-lg btn-primary" @click="addTask()">Add New Task</button>
+              <button type="button" class="btn btn-lg btn-primary" @click="addItem(newTodoContent)">Add New Task</button>
         </div>
     </div>
     <!--Script-->

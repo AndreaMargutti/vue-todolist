@@ -3,10 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            newTodo: {
-                text: '',
-                done: false,
-            },
+            newTodoContent: "",
 
             todoList: [
                 {
@@ -38,8 +35,19 @@ createApp({
             this.todoList.splice(itemIndex, 1);
         },
 
-        addTask() {
-            this.todoList.push(this.newTodo);
+        addItem(content) {
+            this.todoList.push(
+                {
+                    text: content,
+                    done: false,
+                }
+            )
+            this.newTodoContent = "";
+        },
+
+        changeDone(index) {
+            // ! Rendi la proprietà "done" dei singoli oggetti l'opposto di se stessa
+            this.todoList[index].done = !this.todoList[index].done
         }
     }
 }).mount('#app')
